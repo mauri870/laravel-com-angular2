@@ -17,6 +17,8 @@ class CreateTableProjectFiles extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('extension');
+            $table->integer('project_id')->unsigned();
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->timestamps();
         });
     }
